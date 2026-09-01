@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+/* Leaflet Custom Marker & Popup Styles */
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #f1f5f9 !important;
+  border-radius: 1rem !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.95) !important;
+}
+
+.leaflet-container {
+  background-color: #020617 !important;
+  font-family: inherit !important;
+}
+
+/* Custom Animation Utilities */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Hide scrollbar for clean UI while keeping scrollable */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* =========================================================
+   GLOBAL MARITIME THEMES & BACKGROUND STYLES
+   ========================================================= */
+
+/* 1. Ocean Teal Marine (Default Rekomendasi Maritim) */
+[data-theme="ocean_teal"] {
+  background-color: #041622 !important;
+  color: #f1f5f9;
+}
+[data-theme="ocean_teal"] .bg-\[\#020617\] {
+  background-color: #041622 !important;
+}
+[data-theme="ocean_teal"] .bg-\[\#0f172a\] {
+  background-color: #08293d !important;
+}
+[data-theme="ocean_teal"] .bg-slate-900,
+[data-theme="ocean_teal"] .bg-slate-900\/90,
+[data-theme="ocean_teal"] .bg-slate-900\/80,
+[data-theme="ocean_teal"] .bg-slate-900\/60 {
+  background-color: #051e2e !important;
+}
+[data-theme="ocean_teal"] .bg-\[\#1e293b\],
+[data-theme="ocean_teal"] .bg-\[\#1e293b\]\/70,
+[data-theme="ocean_teal"] .bg-\[\#1e293b\]\/50 {
+  background-color: #0b344d !important;
+}
+[data-theme="ocean_teal"] .border-slate-800,
+[data-theme="ocean_teal"] .border-slate-800\/80,
+[data-theme="ocean_teal"] .border-slate-800\/50 {
+  border-color: rgba(19, 78, 111, 0.45) !important;
+}
+[data-theme="ocean_teal"] .border-slate-700,
+[data-theme="ocean_teal"] .border-slate-700\/80,
+[data-theme="ocean_teal"] .border-slate-700\/50 {
+  border-color: rgba(19, 78, 111, 0.6) !important;
+}
+
+/* 2. Royal Navy Cobalt */
+[data-theme="royal_navy"] {
+  background-color: #060e22 !important;
+  color: #f1f5f9;
+}
+[data-theme="royal_navy"] .bg-\[\#020617\] {
+  background-color: #060e22 !important;
+}
+[data-theme="royal_navy"] .bg-\[\#0f172a\] {
+  background-color: #0d224d !important;
+}
+[data-theme="royal_navy"] .bg-slate-900,
+[data-theme="royal_navy"] .bg-slate-900\/90,
+[data-theme="royal_navy"] .bg-slate-900\/80,
+[data-theme="royal_navy"] .bg-slate-900\/60 {
+  background-color: #081738 !important;
+}
+[data-theme="royal_navy"] .bg-\[\#1e293b\],
+[data-theme="royal_navy"] .bg-\[\#1e293b\]\/70,
+[data-theme="royal_navy"] .bg-\[\#1e293b\]\/50 {
+  background-color: #122b5e !important;
+}
+[data-theme="royal_navy"] .border-slate-800,
+[data-theme="royal_navy"] .border-slate-800\/80,
+[data-theme="royal_navy"] .border-slate-800\/50 {
+  border-color: rgba(30, 58, 138, 0.45) !important;
+}
+[data-theme="royal_navy"] .border-slate-700,
+[data-theme="royal_navy"] .border-slate-700\/80,
+[data-theme="royal_navy"] .border-slate-700\/50 {
+  border-color: rgba(30, 58, 138, 0.6) !important;
+}
+
+/* 3. Nordic Slate Gray */
+[data-theme="nordic_slate"] {
+  background-color: #0f172a !important;
+  color: #f1f5f9;
+}
+[data-theme="nordic_slate"] .bg-\[\#020617\] {
+  background-color: #0f172a !important;
+}
+[data-theme="nordic_slate"] .bg-\[\#0f172a\] {
+  background-color: #1e293b !important;
+}
+[data-theme="nordic_slate"] .bg-slate-900,
+[data-theme="nordic_slate"] .bg-slate-900\/90,
+[data-theme="nordic_slate"] .bg-slate-900\/80,
+[data-theme="nordic_slate"] .bg-slate-900\/60 {
+  background-color: #131d31 !important;
+}
+[data-theme="nordic_slate"] .bg-\[\#1e293b\],
+[data-theme="nordic_slate"] .bg-\[\#1e293b\]\/70,
+[data-theme="nordic_slate"] .bg-\[\#1e293b\]\/50 {
+  background-color: #27354a !important;
+}
+[data-theme="nordic_slate"] .border-slate-800,
+[data-theme="nordic_slate"] .border-slate-800\/80,
+[data-theme="nordic_slate"] .border-slate-800\/50 {
+  border-color: rgba(51, 65, 85, 0.6) !important;
+}
+[data-theme="nordic_slate"] .border-slate-700,
+[data-theme="nordic_slate"] .border-slate-700\/80,
+[data-theme="nordic_slate"] .border-slate-700\/50 {
+  border-color: rgba(71, 85, 105, 0.7) !important;
+}
+
+/* 4. Emerald Lagoon */
+[data-theme="emerald_lagoon"] {
+  background-color: #021815 !important;
+  color: #f1f5f9;
+}
+[data-theme="emerald_lagoon"] .bg-\[\#020617\] {
+  background-color: #021815 !important;
+}
+[data-theme="emerald_lagoon"] .bg-\[\#0f172a\] {
+  background-color: #073832 !important;
+}
+[data-theme="emerald_lagoon"] .bg-slate-900,
+[data-theme="emerald_lagoon"] .bg-slate-900\/90,
+[data-theme="emerald_lagoon"] .bg-slate-900\/80,
+[data-theme="emerald_lagoon"] .bg-slate-900\/60 {
+  background-color: #03231f !important;
+}
+[data-theme="emerald_lagoon"] .bg-\[\#1e293b\],
+[data-theme="emerald_lagoon"] .bg-\[\#1e293b\]\/70,
+[data-theme="emerald_lagoon"] .bg-\[\#1e293b\]\/50 {
+  background-color: #0c4840 !important;
+}
+[data-theme="emerald_lagoon"] .border-slate-800,
+[data-theme="emerald_lagoon"] .border-slate-800\/80,
+[data-theme="emerald_lagoon"] .border-slate-800\/50 {
+  border-color: rgba(15, 92, 81, 0.45) !important;
+}
+[data-theme="emerald_lagoon"] .border-slate-700,
+[data-theme="emerald_lagoon"] .border-slate-700\/80,
+[data-theme="emerald_lagoon"] .border-slate-700\/50 {
+  border-color: rgba(15, 92, 81, 0.65) !important;
+}
+
+/* 5. Clean Oceanic Light (Mode Terang Sejuk) */
+[data-theme="ocean_light"] {
+  background-color: #f0f6fc !important;
+  color: #1e293b !important;
+}
+[data-theme="ocean_light"] .bg-\[\#020617\] {
+  background-color: #f0f6fc !important;
+}
+[data-theme="ocean_light"] .bg-\[\#0f172a\],
+[data-theme="ocean_light"] .bg-\[\#0f172a\]\/80,
+[data-theme="ocean_light"] .bg-\[\#0f172a\]\/90 {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+[data-theme="ocean_light"] .bg-slate-900,
+[data-theme="ocean_light"] .bg-slate-900\/90,
+[data-theme="ocean_light"] .bg-slate-900\/80,
+[data-theme="ocean_light"] .bg-slate-900\/60,
+[data-theme="ocean_light"] .bg-slate-900\/40 {
+  background-color: #f8fafc !important;
+}
+[data-theme="ocean_light"] .bg-slate-800,
+[data-theme="ocean_light"] .bg-slate-800\/90,
+[data-theme="ocean_light"] .bg-slate-800\/80,
+[data-theme="ocean_light"] .bg-slate-800\/70,
+[data-theme="ocean_light"] .bg-slate-800\/60,
+[data-theme="ocean_light"] .bg-slate-800\/50 {
+  background-color: #edf3f8 !important;
+}
+[data-theme="ocean_light"] .bg-\[\#1e293b\],
+[data-theme="ocean_light"] .bg-\[\#1e293b\]\/70,
+[data-theme="ocean_light"] .bg-\[\#1e293b\]\/50 {
+  background-color: #e2e8f0 !important;
+}
+[data-theme="ocean_light"] .border-slate-800,
+[data-theme="ocean_light"] .border-slate-800\/80,
+[data-theme="ocean_light"] .border-slate-800\/50 {
+  border-color: #e2e8f0 !important;
+}
+[data-theme="ocean_light"] .border-slate-700,
+[data-theme="ocean_light"] .border-slate-700\/80,
+[data-theme="ocean_light"] .border-slate-700\/50 {
+  border-color: #cbd5e1 !important;
+}
+[data-theme="ocean_light"] .text-white {
+  color: #0f172a !important;
+}
+[data-theme="ocean_light"] .text-slate-100 {
+  color: #1e293b !important;
+}
+[data-theme="ocean_light"] .text-slate-200 {
+  color: #334155 !important;
+}
+[data-theme="ocean_light"] .text-slate-300 {
+  color: #475569 !important;
+}
+[data-theme="ocean_light"] .text-slate-400 {
+  color: #64748b !important;
+}
+[data-theme="ocean_light"] .text-slate-500 {
+  color: #64748b !important;
+}
+[data-theme="ocean_light"] input,
+[data-theme="ocean_light"] select,
+[data-theme="ocean_light"] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+[data-theme="ocean_light"] .leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+[data-theme="ocean_light"] .leaflet-popup-tip {
+  background: #ffffff !important;
+}
+[data-theme="ocean_light"] footer {
+  background-color: #e2eaf2 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* 6. Crisp Pure White (Mode Putih Bersih 100%) */
+[data-theme="pure_white"] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+[data-theme="pure_white"] .bg-\[\#020617\] {
+  background-color: #ffffff !important;
+}
+[data-theme="pure_white"] .bg-\[\#0f172a\],
+[data-theme="pure_white"] .bg-\[\#0f172a\]\/80,
+[data-theme="pure_white"] .bg-\[\#0f172a\]\/90 {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 15px -1px rgba(0, 0, 0, 0.07) !important;
+}
+[data-theme="pure_white"] .bg-slate-900,
+[data-theme="pure_white"] .bg-slate-900\/90,
+[data-theme="pure_white"] .bg-slate-900\/80,
+[data-theme="pure_white"] .bg-slate-900\/60,
+[data-theme="pure_white"] .bg-slate-900\/40 {
+  background-color: #f8fafc !important;
+}
+[data-theme="pure_white"] .bg-slate-800,
+[data-theme="pure_white"] .bg-slate-800\/90,
+[data-theme="pure_white"] .bg-slate-800\/80,
+[data-theme="pure_white"] .bg-slate-800\/70,
+[data-theme="pure_white"] .bg-slate-800\/60,
+[data-theme="pure_white"] .bg-slate-800\/50 {
+  background-color: #f1f5f9 !important;
+}
+[data-theme="pure_white"] .bg-\[\#1e293b\],
+[data-theme="pure_white"] .bg-\[\#1e293b\]\/70,
+[data-theme="pure_white"] .bg-\[\#1e293b\]\/50 {
+  background-color: #e2e8f0 !important;
+}
+[data-theme="pure_white"] .border-slate-800,
+[data-theme="pure_white"] .border-slate-800\/80,
+[data-theme="pure_white"] .border-slate-800\/50 {
+  border-color: #e2e8f0 !important;
+}
+[data-theme="pure_white"] .border-slate-700,
+[data-theme="pure_white"] .border-slate-700\/80,
+[data-theme="pure_white"] .border-slate-700\/50 {
+  border-color: #cbd5e1 !important;
+}
+[data-theme="pure_white"] .text-white {
+  color: #0f172a !important;
+}
+[data-theme="pure_white"] .text-slate-100 {
+  color: #1e293b !important;
+}
+[data-theme="pure_white"] .text-slate-200 {
+  color: #334155 !important;
+}
+[data-theme="pure_white"] .text-slate-300 {
+  color: #475569 !important;
+}
+[data-theme="pure_white"] .text-slate-400 {
+  color: #64748b !important;
+}
+[data-theme="pure_white"] .text-slate-500 {
+  color: #64748b !important;
+}
+[data-theme="pure_white"] input,
+[data-theme="pure_white"] select,
+[data-theme="pure_white"] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+[data-theme="pure_white"] .leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+[data-theme="pure_white"] .leaflet-popup-tip {
+  background: #ffffff !important;
+}
+[data-theme="pure_white"] footer {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+

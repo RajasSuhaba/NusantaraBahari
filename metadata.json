@@ -1,0 +1,10 @@
+{
+  "name": "Nusantara Bahari - Infografis Maritim & Konservasi Pesisir",
+  "description": "Portal infografis interaktif perairan dan kelautan Indonesia: cuaca maritim, pasang surut, kesehatan terumbu karang, peta web GIS, peringatan dini pesisir, infografis builder & exporter, serta upload data Excel/CSV.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
